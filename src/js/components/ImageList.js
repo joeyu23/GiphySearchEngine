@@ -18,9 +18,11 @@ const ImageList = props => {
 		images = <NoImages />;
 	}
 	return (
-		<ul className = "img-list">
-			{images}
-		</ul>
+		<div className="container">
+			<div className="row">
+				{images}
+			</div>
+		</div>
 	);
 };
 

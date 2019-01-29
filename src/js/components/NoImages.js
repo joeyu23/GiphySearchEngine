@@ -1,9 +1,7 @@
 import React from "react";
 
 const NoImages = props => (
-	<li>
-		<h3>Sorry, no images related to your search.</h3>
-	</li>
+	<h3>Sorry, no GIFs related to your search...yet.</h3>
 )
 
 export default NoImages;

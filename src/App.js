@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import ImageList from "./components/ImageList";
-import { GIPHY_CRED_TOKEN } from "./constants/credentials.js";
-import SearchForm from "./components/SearchForm";
+import ImageList from "./js/components/ImageList.js";
+import { GIPHY_CRED_TOKEN } from "./js/constants/credentials.js";
+import SearchForm from "./js/components/SearchForm";
 import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       images: [],
-      loading: true
+      loadingState: false
     };
   }
 
@@ -33,15 +33,10 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          alignSelf: "center",
-          display: "flex"
-        }}
-      >
+      <div>
         <div className = "main-header">
           <div className = "inner">
-            <h1>Image Search</h1>
+            <h1>GIF Engine</h1>
             <SearchForm onSearch = {this.searchImages} />
           </div>
         </div>
