@@ -35,10 +35,8 @@ class App extends Component {
     return (
       <div>
         <div className = "main-header">
-          <div className = "inner">
-            <h1>GIF Engine</h1>
-            <SearchForm onSearch = {this.searchImages} />
-          </div>
+          <h1>GIF Engine</h1>
+          <SearchForm onSearch = {this.searchImages} />
         </div>
         <div className = "main-content">
           {this.state.loadingState

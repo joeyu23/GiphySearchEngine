@@ -29,8 +29,8 @@ export default class SearchForm extends Component {
 						placeholder="Search for a GIF here!"
 					/>
 					<div className="input-group-append">
-						<button type="submit" id="submit" className="btn btn-outline-secondary">
-							<i className="material-icons icn-search">search</i>
+						<button type="submit" className="btn btn-outline-secondary">
+							<i>search</i>
 						</button>
 					</div>
 				</div>
