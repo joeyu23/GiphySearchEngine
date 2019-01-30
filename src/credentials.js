@@ -1,0 +1,1 @@
+export const GIPHY_CRED_TOKEN = "LiT4XaeBUDCDtVpLNuTcc8fzKv84AmW6";
