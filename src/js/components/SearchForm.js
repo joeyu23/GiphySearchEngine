@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
+import { fetchGifs } from '../actions';
+import { connect } from 'react-redux';
+import { INPUT_SEARCH } from '../constants/actionsTypes';
 
-export default class SearchForm extends Component {
+class SearchForm extends Component {
 	state = {
 		searchText: ''
 	};
 
 	onSearchChange = e => {
-		this.setState({ searchText: e.target.value });
+		this.props.dispatch({
+			type: INPUT_SEARCH,
+			searchText: e.target.value
+		})
 	};
 
 	handleSubmit = e => {
 		e.preventDefault();
-		this.props.onSearch(this.query.value);
+		this.props.dispatch(fetchGifs(this.props.searchText));
+		//this.props.dispatch(fetchGifs(this.query.value));
 		e.currentTarget.reset();
 	};
 
@@ -38,3 +45,19 @@ export default class SearchForm extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	searchText: state.searchText,
+	gifs: state.gifs,
+	loadingState: state.gifs.loading,
+	error: state.gifs.error
+});
+
+/*const mapDispatchToProps = dispatch => ({
+	onSearchChange: (e) => dispatch({
+		type: INPUT_SEARCH,
+		searchText: e.target.value
+	})
+})*/
+
+export default connect(mapStateToProps)(SearchForm);
